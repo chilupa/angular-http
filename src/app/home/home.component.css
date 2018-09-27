@@ -1,0 +1,17 @@
+/* Custom CSS classes */
+
+.form-input{
+    width: 30em !important;
+}
+
+.selected{
+    background: lightblue;
+}
+
+.cardInput{
+    width: 15em;
+}
+
+body{
+    padding: 1em;
+}

@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "Kia",
+      "job": "Developer",
+      "location": "Dallas, TX",
+      "id": 1
+    },
+    {
+      "name": "Peter",
+      "job": "Full Stack Developer",
+      "location": "Atlanta, GA",
+      "id": 2
+    },
+    {
+      "name": "John",
+      "job": "Java Developer",
+      "location": "Houston, TX",
+      "id": 3
+    }
+  ]
+}
