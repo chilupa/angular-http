@@ -31,11 +31,11 @@ export class HomeComponent implements OnInit {
 
   // POST
   submitDetails() {
-      this.userObject = {
-        'name': this.userNameInput,
-        'job': this.userJobInput,
-        'location': this.userLocationInput
-      };
+    this.userObject = {
+      'name': this.userNameInput,
+      'job': this.userJobInput,
+      'location': this.userLocationInput
+    };
     this.userService.postUsers(this.userObject).subscribe((observer) => {
       console.log(observer);
       this.submitFlag = true;
