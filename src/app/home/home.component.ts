@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { UserService } from '../user.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { User } from '../user';
@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   userLocationInput = '';
   userJobInput = '';
   selectedUser: User;
+  submitMessage = '';
+  submitFlag = false;
 
   constructor(private userService: UserService, private userObject: User) { }
 
@@ -29,13 +31,15 @@ export class HomeComponent implements OnInit {
 
   // POST
   submitDetails() {
-    this.userObject = {
-      'name': this.userNameInput,
-      'job': this.userJobInput,
-      'location': this.userLocationInput
-    };
+      this.userObject = {
+        'name': this.userNameInput,
+        'job': this.userJobInput,
+        'location': this.userLocationInput
+      };
     this.userService.postUsers(this.userObject).subscribe((observer) => {
       console.log(observer);
+      this.submitFlag = true;
+      this.submitMessage = 'Details submitted!';
     },
       (err: HttpErrorResponse) => {
         console.log(err.error);
