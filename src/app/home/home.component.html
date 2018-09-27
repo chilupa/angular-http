@@ -16,6 +16,10 @@
         <button class="btn btn-primary" [disabled]='(userLocationInput ==="" || userJobInput === "" || userNameInput === "")'
             type="submit" (click)="submitDetails()">Submit</button>
     </form>
+    <br>
+    <div *ngIf="submitFlag">
+        <p class="strong" style="color: green;">{{submitMessage}}</p>
+    </div>
     <hr>
     <h3>List of Users</h3>
     <br>
